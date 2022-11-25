@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@types/node': ^18.11.9
+  dirname-es: ^1.0.7
   discord.js: ^14.6.0
   dotenv: ^16.0.3
   eslint: ^8.28.0
@@ -10,6 +11,7 @@ specifiers:
   typescript: ^4.9.3
 
 dependencies:
+  dirname-es: 1.0.7
   discord.js: 14.6.0
 
 devDependencies:
@@ -364,6 +366,10 @@ packages:
     resolution: {integrity: sha512-58lmxKSA4BNyLz+HHMUzlOEpg09FV+ev6ZMe3vJihgdxzgcwZ8VoEEPmALCZG9LmqfVoNMMKpttIYTVG6uDY7A==}
     engines: {node: '>=0.3.1'}
     dev: true
+
+  /dirname-es/1.0.7:
+    resolution: {integrity: sha512-Wv9R00FqwP+Su6h3/bR6pT83wBqNNyhQ0CbjAhJ961g9u27e4KKYsX8w2yygArjEJyWYjrkSvqu0/EtWJM9qyw==}
+    dev: false
 
   /discord-api-types/0.37.20:
     resolution: {integrity: sha512-uAO+55E11rMkYR36/paE1vKN8c2bZa1mgrIaiQIBgIZRKZTDIGOZB+8I5eMRPFJcGxrg16riUu+0aTu2JQEPew==}

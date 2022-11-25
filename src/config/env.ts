@@ -3,5 +3,5 @@ import { env } from 'process'
 
 export default {
 	botToken: env.BOT_TOKEN!,
-	clientId: env.CLIENT_ID
+	clientId: env.CLIENT_ID!
 }

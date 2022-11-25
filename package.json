@@ -6,12 +6,14 @@
 	"type": "module",
 	"scripts": {
 		"start:ts": "ts-node --esm app.ts",
-		"dev:ts": "nodemon app.ts"
+		"dev:ts": "nodemon app.ts",
+		"register": "ts-node --esm ./src/utils/registerCommands.ts"
 	},
 	"keywords": [],
 	"author": "Juan Sebastian Castañeda Burbano",
 	"license": "ISC",
 	"dependencies": {
+		"dirname-es": "^1.0.7",
 		"discord.js": "^14.6.0"
 	},
 	"devDependencies": {
