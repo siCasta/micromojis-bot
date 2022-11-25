@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"allowSyntheticDefaultImports": true,
+		"lib": ["ESNext"],
+		"rootDir": "./",
+		"outDir": "./build",
+		"strict": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true
+	},
+	"exclude": ["node_modules", "**/node_modules/*"],
+	"include": ["src/**/*.ts", "server.ts"]
+}
