@@ -1,5 +1,4 @@
-import { ClientEvents, Events } from 'discord.js'
-import { Client } from '../config/classes.js'
+import { ClientEvents } from 'discord.js'
 
 export interface EventI<K extends keyof ClientEvents> {
 	name: K

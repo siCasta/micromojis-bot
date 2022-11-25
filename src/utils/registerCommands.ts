@@ -6,13 +6,10 @@ import { readdirSync } from 'fs'
 import env from '../config/env.js'
 
 const __dirname = dirname(import.meta)
-
 const commands = []
 
 const commandsPath = join(__dirname, '..', 'commands')
-console.log(commandsPath)
 const commandDirs = readdirSync(commandsPath)
-console.log(commandDirs)
 
 for (const commandDir of commandDirs) {
 	const commandDirsPath = join(commandsPath, commandDir)
@@ -25,9 +22,6 @@ for (const commandDir of commandDirs) {
 		const command = (await import(`../${filePath}`))
 			.default as SlashCommandI
 
-		console.log(command)
-		console.log(command.data.name)
-
 		commands.push(command.data.toJSON())
 	}
 }
@@ -35,7 +29,7 @@ for (const commandDir of commandDirs) {
 const rest = new REST({ version: '10' }).setToken(env.botToken)
 
 try {
-	const data = await rest.put(Routes.applicationCommands(env.clientId), {
+	await rest.put(Routes.applicationCommands(env.clientId), {
 		body: commands
 	})
 

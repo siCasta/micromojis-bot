@@ -13,6 +13,8 @@
 	"author": "Juan Sebastian Castañeda Burbano",
 	"license": "ISC",
 	"dependencies": {
+		"axios": "^1.2.0",
+		"canvas": "^2.10.2",
 		"dirname-es": "^1.0.7",
 		"discord.js": "^14.6.0"
 	},
