@@ -4,6 +4,8 @@ import { Client } from './config/classes.js'
 import { dirname } from 'dirname-es'
 import { readdirSync } from 'fs'
 import { SlashCommandI } from './types/command.js'
+import Cooldowns from './services/models/cooldowns.js'
+import ms from 'ms'
 
 const __dirname = dirname(import.meta)
 const client = new Client({
@@ -45,7 +47,33 @@ client.on(Events.InteractionCreate, async interaction => {
 	}
 
 	try {
-		await command.execute(interaction)
+		const cdService = new Cooldowns({
+			command: command.data.name,
+			userId: interaction.user.id
+		})
+
+		if (!!command.cooldown) {
+			const cd = await cdService.getCooldown()
+
+			if (!cd || Date.now() >= cd.cooldown) {
+				await cdService.deleteCooldown()
+				command.execute(interaction)
+				await cdService.setCooldown(command.cooldown * 1000)
+			} else {
+				const timeToWait = ms(cd.cooldown - Date.now(), {
+					long: true
+				})
+
+				await interaction.reply({
+					content: `You have to wait \` ${timeToWait} \``,
+					ephemeral: true
+				})
+
+				return
+			}
+		} else {
+			await command.execute(interaction)
+		}
 	} catch (error) {
 		console.error(error)
 		await interaction.reply({

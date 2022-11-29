@@ -7,5 +7,6 @@ export default {
 		.setDescription('Replies with pong'),
 	async execute(interaction) {
 		await interaction.reply(`Pong! ${interaction.client.ws.ping}ms`)
-	}
+	},
+	cooldown: 3
 } as SlashCommandI
