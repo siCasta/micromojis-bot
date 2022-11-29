@@ -1,6 +1,6 @@
 import { SlashCommandBuilder, EmbedBuilder } from 'discord.js'
 import { findEmoji } from '../../services/axios/emojis.js'
-import { Extension, Extensions } from '../../types/attachEmojis.js'
+import { Extension } from '../../types/attachEmojis.js'
 import { SlashCommandI } from '../../types/command.js'
 import { attachEmoji } from '../../utils/attachEmojis.js'
 

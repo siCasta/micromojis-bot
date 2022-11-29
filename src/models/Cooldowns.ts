@@ -1,5 +1,5 @@
 import db from './db.js'
-import { Document, ObjectId } from 'mongodb'
+import { ObjectId } from 'mongodb'
 
 interface CooldownsSchema {
 	_id?: ObjectId
